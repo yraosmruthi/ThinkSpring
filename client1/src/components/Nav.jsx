@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
    return (
     <div className=' text-[#3b3bca] text-l font-semibold flex justify-between px-5 py-4 '>
         <div className=''>
-            <NavLink className='ml-2 ' to="/">Rao Associates</NavLink>
+            <NavLink className='ml-2 ' to="/">ThinkSpring</NavLink>
         </div>
         <div className='  flex gap-9 mr-20 ' >
             <ul><NavLink to="/">Home</NavLink></ul>

@@ -6,7 +6,7 @@
     <div className=''>
       <div className='flex flex-row mt-15'>
         <div className='mt-10 ml-30 w-[50%] mr-40'>
-          <h1 className='text-5xl font-bold mb-10'>Welcome to Rao Associates</h1>
+          <h1 className='text-5xl font-bold mb-10'>Welcome to ThinkSpring</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus veniam aliquid recusandae. Autem numquam, odit esse perspiciatis harum magnam delectus maxime quidem, consequuntur est, deleniti excepturi ipsam. Saepe consectetur explicabo amet repellat accusamus placeat doloribus libero, accusantium molestiae reiciendis!</p>
 
         <div>
