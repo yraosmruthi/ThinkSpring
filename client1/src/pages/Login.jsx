@@ -77,7 +77,7 @@ const Login = () => {
                 <h2 className='mt-4 mb-2 text-l'>Password</h2>
                 <input className='bg-zinc-700 rounded-md mb-5 w-[350px] h-8' type="password" name="password" required value={user.password} onChange={handleInput}/>
                 
-                <input className='block bg-[#3b3bca] rounded-md px-3 py-2' type="submit"  value='Login '/>
+                <input className='block bg-[#3b3bca] rounded-md px-4 py-2 shadow-lg transition-all duration-300 ease-in-out hover:bg-purple-900 hover:scale-105 hover:shadow-xl' type="submit"  value='Login '/>
 
             </form> 
            </div>

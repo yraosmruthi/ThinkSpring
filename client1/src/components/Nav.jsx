@@ -8,19 +8,19 @@ import { useAuth } from '../store/AuthProvider'
    return (
     <div className=' text-[#3b3bca] text-l font-semibold flex justify-between px-5 py-4 '>
         <div className=''>
-            <NavLink className='ml-2 ' to="/">ThinkSpring</NavLink>
+            <NavLink className='ml-2 hover:underline decoration-white underline-offset-6 hover:text-[#5959d6] active:text-[#6f6fe6]' to="/">ThinkSpring</NavLink>
         </div>
         <div className='  flex gap-9 mr-20 ' >
-            <ul><NavLink to="/">Home</NavLink></ul>
-            <ul><NavLink to="/about">About</NavLink></ul> 
-            <ul><NavLink to="/contact">Contact</NavLink></ul>
-            <ul><NavLink to="/services">Services</NavLink></ul>
+            <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6] active:text-[#6f6fe6]'  to="/">Home</NavLink></ul>
+            <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6] active:text-[#6f6fe6]'  to="/about">About</NavLink></ul> 
+            <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6] active:text-[#6f6fe6]'  to="/contact">Contact</NavLink></ul>
+            <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6]  active:text-[#6f6fe6]'  to="/services">Services</NavLink></ul>
             {isLoggedIn ?(                                                                
-                <ul><NavLink to="/logout">Logout</NavLink></ul>
+                <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6]  active:text-[#6f6fe6]' to="/logout">Logout</NavLink></ul>
             ):(
             <>
-             <ul><NavLink to="/register">Sign Up</NavLink></ul>
-            <ul><NavLink to="/login">Login</NavLink></ul>
+             <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6]  active:text-[#6f6fe6]' to="/register">Sign Up</NavLink></ul>
+            <ul><NavLink className='hover:underline decoration-white underline-offset-6 hover:text-[#5959d6]  active:text-[#6f6fe6]' to="/login">Login</NavLink></ul>
             </>
         )}
             
