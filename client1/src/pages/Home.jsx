@@ -5,13 +5,13 @@
    return (
     <div className=''>
       <div className='flex flex-row mt-15'>
-        <div className='mt-10 ml-30 w-[50%] mr-40'>
+        <div className='mt-10 ml-30 w-[60%] mr-40'>
           <h1 className='text-5xl font-bold mb-10'>Welcome to ThinkSpring</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus veniam aliquid recusandae. Autem numquam, odit esse perspiciatis harum magnam delectus maxime quidem, consequuntur est, deleniti excepturi ipsam. Saepe consectetur explicabo amet repellat accusamus placeat doloribus libero, accusantium molestiae reiciendis!</p>
 
         <div>
-         <NavLink to='/contact'><button className='rounded-md bg-[#3b3bca] mt-5 px-2 py-3' type="button">Contact Now</button></NavLink>
-         <NavLink to='/about'><button className='rounded-md border border-zinc-600 mt-5 px-2 py-3 ml-5' type="button">Learn more</button></NavLink>
+         <NavLink to='/contact'><button className='bg-[#3b3bca] rounded-md px-3 py-2 shadow-lg transition-all duration-300 ease-in-out hover:bg-purple-900 hover:scale-105 hover:shadow-xl' type="button">Contact Now</button></NavLink>
+         <NavLink to='/about'><button className='rounded-md border border-zinc-600 mt-5 px-3 py-2 ml-5 shadow-lg transition-all duration-300 ease-in-out hover:bg-zinc-700 hover:scale-105 hover:shadow-xl' type="button">Learn more</button></NavLink>
         </div>
 
         </div>
@@ -22,30 +22,43 @@
 
       </div>
 
-      <div className='w-[65%] bg-white  ml-60 mr-40 mt-20 text-black rounded-md px-5 py-5 flex justify-evenly'>
-          
-        <div className="w-[2px] h-20 bg-zinc-500">
+      <div className='w-[65%] bg-white ml-60 mr-40 mt-20 text-black rounded-md px-5 py-5 flex justify-between'>
+
+        <div className='text-center w-1/3'>
+          <h2 className="text-3xl font-bold text-[#3b3bca]">100+</h2>
+          <p className="text-sm mt-2">Projects Completed</p>
         </div>
-        <div className="w-[2px] h-20 bg-zinc-500">
+
+        <div className="w-[1px] bg-zinc-400 mx-4"></div>
+
+        <div className='text-center w-1/3'>
+          <h2 className="text-3xl font-bold text-[#3b3bca]">50+</h2>
+          <p className="text-sm mt-2">Satisfied Clients</p>
         </div>
-        <div className="w-[2px] h-20 bg-zinc-500">
+
+        <div className="w-[1px] bg-zinc-400 mx-4"></div>
+
+        <div className='text-center w-1/3'>
+          <h2 className="text-3xl font-bold text-[#3b3bca]">24/7</h2>
+          <p className="text-sm mt-2">Support Available</p>
         </div>
-  
+
       </div>
-     
-     <div className=''>
+
+    <div className=''>
       <div className='flex flex-row mt-30 '>
-        <div className='  ml-40 w-[50%]'>
+        <div className='  ml-40 mb-10 w-[50%]'>
           <img className='w-[430px]' src="./images/design.png"  />
         </div>
 
         <div className='mt-10 ml-30 w-[50%] mr-60'>
           <h1 className='text-5xl font-bold mb-10'>Get Started Today</h1>
+
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus veniam aliquid recusandae. Autem numquam, odit esse perspiciatis harum magnam delectus maxime quidem, consequuntur est, deleniti excepturi ipsam. Saepe consectetur explicabo amet repellat accusamus placeat doloribus libero, accusantium molestiae reiciendis!</p>
 
         <div>
-          <NavLink to='/contact'><button className='rounded-md bg-[#3b3bca] mt-5 px-2 py-3' type="button">Contact Now</button></NavLink>
-          <NavLink to='/about'><button className='rounded-md bg-transparent border border-zinc-600 mt-5 px-2 py-3 ml-5' type="button">Learn more</button></NavLink>
+         <NavLink to='/contact'><button className='bg-[#3b3bca] rounded-md px-3 py-2 shadow-lg transition-all duration-300 ease-in-out hover:bg-purple-900 hover:scale-105 hover:shadow-xl' type="button">Contact Now</button></NavLink>
+         <NavLink to='/about'><button className='rounded-md border border-zinc-600 mt-5 px-3 py-2 ml-5 shadow-lg transition-all duration-300 ease-in-out hover:bg-zinc-700 hover:scale-105 hover:shadow-xl' type="button">Learn more</button></NavLink>
         </div>
 
         </div>

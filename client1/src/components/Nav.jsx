@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../store/AuthProvider'
  
  const Nav = () => {
 
+    const {isLoggedIn} = useAuth();
    return (
     <div className=' text-[#3b3bca] text-l font-semibold flex justify-between px-5 py-4 '>
         <div className=''>
@@ -13,8 +15,14 @@ import { NavLink } from 'react-router-dom'
             <ul><NavLink to="/about">About</NavLink></ul> 
             <ul><NavLink to="/contact">Contact</NavLink></ul>
             <ul><NavLink to="/services">Services</NavLink></ul>
-            <ul><NavLink to="/register">Sign Up</NavLink></ul>
+            {isLoggedIn ?(                                                                
+                <ul><NavLink to="/logout">Logout</NavLink></ul>
+            ):(
+            <>
+             <ul><NavLink to="/register">Sign Up</NavLink></ul>
             <ul><NavLink to="/login">Login</NavLink></ul>
+            </>
+        )}
             
         </div>
 

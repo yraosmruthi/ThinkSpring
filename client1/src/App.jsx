@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './pages/Register'
 import Footer from './components/Footer'
 import Login from './pages/Login'
+import Logout from './pages/Logout'
 import Services from './pages/Services'
 import PageNotFound from './pages/PageNotFound'
 
@@ -24,6 +25,7 @@ function App() {
         <Route path ='/services' element={<Services />}/>
         <Route path ='/register' element={<Register/>}/>
         <Route path ='/login' element={<Login />}/>
+        <Route path ='/logout' element={<Logout />}/>
         <Route path='*' element={<PageNotFound />}/>
       
       </Routes>

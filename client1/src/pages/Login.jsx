@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../store/AuthProvider';
 
-const Navigate = useNavigate();
+
 const URL = 'http://localhost:3000/auth/login';
 
 const Login = () => {
+  const navigate = useNavigate(); // ✅ Top-level usage
+  const { storeInLS } = useAuth();
     const [user,setUser] = useState({
         email:"",
         password:""
@@ -23,6 +26,7 @@ const Login = () => {
 
     
    const handleSubmit = async (e)=>{
+   
     try{
     e.preventDefault();
     
@@ -37,12 +41,15 @@ const Login = () => {
     console.log("login",response);
 
     if(response.ok){
-      alert('registration successful');
+      const res_data = await response.json();
+
+      storeInLS(res_data.token)
+      alert('login successful');
       setUser({
         email:"",
         password:""
       });
-      Navigate("/")
+      navigate("/")
     } else{
       alert("invalid credential");
       console.log("invalid credential")

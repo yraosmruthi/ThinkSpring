@@ -1,14 +1,34 @@
 
 import React, { useState } from 'react'
+import { useAuth } from '../store/AuthProvider';
 
-const Contact = () => {
-  const[contact,setContact]=useState({
+const URL = 'http://localhost:3000/auth/user'
+
+const Contact =  () => {
+
+   const defaultContactForm={
     username:"",
     email:"",
     message:""
-  });
+   }
 
-  const handleInput =(e)=>{
+   const[userData,setUserData] =useState(true)
+  
+   const[contact,setContact]=useState(defaultContactForm);
+   
+   const {user} = useAuth();
+
+  
+    if (userData && user) {
+      setContact({
+        username: user.username || "",
+        email: user.email || "",
+        message: ""
+      });
+      setUserData(false);
+    }
+    
+   const handleInput =(e)=>{
    let name=e.target.name;
    let value=e.target.value;
 
@@ -18,11 +38,30 @@ const Contact = () => {
    })
   }
 
-  const handleSubmit =(e)=>{
+  const handleSubmit = async (e)=>{
    e.preventDefault();
+
    console.log(contact);
-   alert('data stored')
-  }
+   try{
+
+   const response = await fetch('http://localhost:3000/form/contact',{
+    method:'POST',
+    headers:{
+      'content-type':'application/json'
+    },
+    body:JSON.stringify(contact)
+  })
+
+  if(response.ok){
+    setContact(defaultContactForm)
+    const data = await response.json()
+    console.log(data)
+    alert('message recieved successfully')
+   }
+  }catch(error){
+  console.log(error)
+ }
+}
 
   return (
     <>

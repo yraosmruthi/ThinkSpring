@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../store/AuthProvider';
 
-const Navigate = useNavigate();
+
+
+
 
 const URL = 'http://localhost:3000/auth/register'
-const Register = () => {
+  const Register = () => {
+  const navigate = useNavigate(); // ✅ Top-level usage
+  const { storeInLS } = useAuth();
   const [user,setUser]=useState({
     username:"",
     email:"",
@@ -38,6 +43,9 @@ const Register = () => {
     console.log("register",response);
 
     if(response.ok){
+      const res_data = await response.json();
+       console.log(res_data.token);
+      storeInLS(res_data.token)
       alert('registration successful');
       setUser({
         username:"",
@@ -45,7 +53,7 @@ const Register = () => {
         phone:"",
         password:""
       });
-      Navigate("/login")
+      navigate("/login")
     } else{
       alert("invalid credential");
       console.log("invalid credential")

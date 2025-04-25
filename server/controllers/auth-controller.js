@@ -1,8 +1,6 @@
 const User = require("../models/user-model")
 const bcrypt = require('bcryptjs')
 
-
-
 const register = async (req,res)=>{
   try{
    console.log("registeringggg..")
@@ -62,5 +60,17 @@ const login = async (req,res)=>{
   }
 }
 
+const user = async (req,res)=>{
+  try{
+    const user = req.user
+    const token = req.token
 
-module.exports = {register,login};
+    res.status(200).json({user})
+
+  } catch(error){
+    console.log(` error is ${error}`)
+  }
+}
+
+
+module.exports = {register,login,user};
