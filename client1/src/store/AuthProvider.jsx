@@ -5,8 +5,9 @@ const URL = 'http://localhost:3000/auth/user';
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [user, setUser] = useState("");
+  const[token, setToken] = useState(localStorage.getItem("token"));
+  const[user, setUser] = useState("");
+  const[services,setService] = useState([])
 
   const storeInLS = (serverToken) => {
     localStorage.setItem("token", serverToken);
@@ -19,6 +20,22 @@ const AuthProvider = ({ children }) => {
     setToken("");
     localStorage.removeItem("token");
   };
+
+  const getServices = async ()=>{
+    try{
+      const response = await fetch("http://localhost:3000/data/service",{
+          method:'GET'
+      })
+      if(response.ok){
+        const data = await response.json();
+        setService(data.msg)
+        console.log('message recieved');
+      }
+
+    }catch(error){
+      console.log('service error',error)
+    }
+  }
 
   const Authentication = async () => {
     try {
@@ -42,13 +59,13 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if(token){
+      getServices();
       Authentication();
-    }
-  }, [token]); // Dependency on `token` to refresh when it changes
+    
+  }, []); 
 
-  return (
-    <AuthContext.Provider value={{ storeInLS, logoutUser, isLoggedIn, Authentication,user}}>
+   return (
+    <AuthContext.Provider value={{ storeInLS, logoutUser, isLoggedIn, user,services}}>
       {children}
     </AuthContext.Provider>
   );

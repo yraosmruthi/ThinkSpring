@@ -53,7 +53,7 @@ const URL = 'http://localhost:3000/auth/register'
         phone:"",
         password:""
       });
-      navigate("/login")
+      navigate("/")
     } else{
       alert("invalid credential");
       console.log("invalid credential")
@@ -72,7 +72,7 @@ const URL = 'http://localhost:3000/auth/register'
       </div>
 
         <div className=' mt-20 ml-[150px]'>
-          <h1 className='font-bold text-5xl'>Registration Form</h1>
+          <h1 className='font-bold text-5xl bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 text-transparent bg-clip-text '><span className="bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">Registration</span> Form</h1>
             <form autoComplete='off' action="" onSubmit={handleSubmit}>
               <h2 className='mt-13 mb-2 text-l'>Username</h2>
               <input className='bg-zinc-700 rounded-md  w-[350px] h-8' type="text" name="username" required value={user.username} onChange={handleInput}/>

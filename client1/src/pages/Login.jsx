@@ -6,7 +6,7 @@ import { useAuth } from '../store/AuthProvider';
 const URL = 'http://localhost:3000/auth/login';
 
 const Login = () => {
-  const navigate = useNavigate(); // ✅ Top-level usage
+  const navigate = useNavigate();
   const { storeInLS } = useAuth();
     const [user,setUser] = useState({
         email:"",
@@ -68,7 +68,7 @@ const Login = () => {
             </div>
 
            <div className=' mt-20 ml-[150px]'>
-            <h1 className='font-bold text-5xl '>Login Form</h1>
+            <h1 className='font-bold text-5xl bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 text-transparent bg-clip-text'><span className="bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">Login</span> Form</h1>
             <form autoComplete='off' action="" onSubmit={handleSubmit}>
                
                 <h2 className='mt-12 mb-2 text-l'>Email</h2>

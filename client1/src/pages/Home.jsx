@@ -6,7 +6,11 @@
     <div className=''>
       <div className='flex flex-row mt-15'>
         <div className='mt-10 ml-30 w-[60%] mr-40'>
-          <h1 className='text-5xl font-bold mb-10'>Welcome to ThinkSpring</h1>
+        <h1 className="text-5xl font-extrabold mb-10 bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">
+         Welcome to <span className="bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">ThinkSpring</span>
+         </h1>
+
+
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus veniam aliquid recusandae. Autem numquam, odit esse perspiciatis harum magnam delectus maxime quidem, consequuntur est, deleniti excepturi ipsam. Saepe consectetur explicabo amet repellat accusamus placeat doloribus libero, accusantium molestiae reiciendis!</p>
 
         <div>
@@ -22,28 +26,37 @@
 
       </div>
 
-      <div className='w-[65%] bg-white ml-60 mr-40 mt-20 text-black rounded-md px-5 py-5 flex justify-between'>
+          <div className='w-[75%] bg-white ml-60 mr-40 mt-20 text-black rounded-md px-5 py-5 flex justify-between'>
+      
+          <div className='text-center w-1/4'>
+            <h2 className="text-3xl font-bold text-[#3b3bca]">100+</h2>
+            <p className="text-sm mt-2">Projects Completed</p>
+          </div>
 
-        <div className='text-center w-1/3'>
-          <h2 className="text-3xl font-bold text-[#3b3bca]">100+</h2>
-          <p className="text-sm mt-2">Projects Completed</p>
-        </div>
+          <div className="w-[1px] bg-zinc-400 mx-4"></div>
 
-        <div className="w-[1px] bg-zinc-400 mx-4"></div>
+          <div className='text-center w-1/4'>
+            <h2 className="text-3xl font-bold text-[#3b3bca]">50+</h2>
+            <p className="text-sm mt-2">Satisfied Clients</p>
+          </div>
 
-        <div className='text-center w-1/3'>
-          <h2 className="text-3xl font-bold text-[#3b3bca]">50+</h2>
-          <p className="text-sm mt-2">Satisfied Clients</p>
-        </div>
+          <div className="w-[1px] bg-zinc-400 mx-4"></div>
 
-        <div className="w-[1px] bg-zinc-400 mx-4"></div>
+          <div className='text-center w-1/4'>
+            <h2 className="text-3xl font-bold text-[#3b3bca]">24/7</h2>
+            <p className="text-sm mt-2">Support Available</p>
+          </div>
 
-        <div className='text-center w-1/3'>
-          <h2 className="text-3xl font-bold text-[#3b3bca]">24/7</h2>
-          <p className="text-sm mt-2">Support Available</p>
-        </div>
+          <div className="w-[1px] bg-zinc-400 mx-4"></div>
+
+          <div className='text-center w-1/4'>
+            <h2 className="text-3xl font-bold text-[#3b3bca]">10+</h2>
+            <p className="text-sm mt-2">Awards Won</p>
+          </div>
 
       </div>
+
+
 
     <div className=''>
       <div className='flex flex-row mt-30 '>
@@ -52,7 +65,7 @@
         </div>
 
         <div className='mt-10 ml-30 w-[50%] mr-60'>
-          <h1 className='text-5xl font-bold mb-10'>Get Started Today</h1>
+          <h1 className='text-5xl font-bold mb-10 bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Get Started <span className="bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">Today</span></h1>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus veniam aliquid recusandae. Autem numquam, odit esse perspiciatis harum magnam delectus maxime quidem, consequuntur est, deleniti excepturi ipsam. Saepe consectetur explicabo amet repellat accusamus placeat doloribus libero, accusantium molestiae reiciendis!</p>
 

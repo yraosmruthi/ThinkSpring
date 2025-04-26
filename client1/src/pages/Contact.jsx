@@ -67,11 +67,11 @@ const Contact =  () => {
     <>
     <div className=' flex flex-1 '>
       <div className=''>
-        <h1 className='text-3xl font-bold mt-5 ml-50'>Contact Us</h1>
-        <img className='w-[400px] ml-60 mt-30' src="./images/support.png" alt="" />
+        <h1 className='text-5xl font-bold mt-5 ml-50 bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 text-transparent bg-clip-text'>Contact Us</h1>
+        <img className='w-[400px] ml-60 mt-20' src="./images/support.png" alt="" />
       </div>
 
-      <div className='w-[50%] ml-60 mt-30'>
+      <div className='w-[50%] ml-60 mt-20'>
         <form action="" autoComplete='off' onSubmit={handleSubmit}>
           <h2 className='text-l mb-3'>Username</h2>
           <input className='bg-zinc-700 rounded-md w-[350px] h-8 mb-3'   type="text" name='username' value={contact.username} onChange={handleInput}/>
@@ -79,7 +79,7 @@ const Contact =  () => {
           <input className='bg-zinc-700 rounded-md w-[350px] h-8 mb-3' type="text" name='email' value={contact.email} onChange={handleInput}/>
           <h2 className='text-l mb-3'>Message</h2>
           <textarea name="message" id="message" cols='30' rows='10' className='bg-zinc-700 rounded-md w-[350px]' value={contact.message} onChange={handleInput}></textarea>
-          <input className='block bg-[#3b3bca] mt-3 rounded-md px-4 py-3' type="submit" />
+          <input className='block  mt-3 rounded-md px-3 py-2 bg-[#3b3bca] shadow-lg transition-all duration-300 ease-in-out hover:bg-purple-900 hover:scale-105 hover:shadow-xl' type="submit" />
         </form>
       </div>
   </div>
