@@ -5,8 +5,18 @@
      next();
    }catch(err){
       
-        const messages = err.errors?.map(e=>e.message) || ["validation failed"];
-        res.status(400).json({ msg:messages});
+     const status=422;
+     const message='Fill the input properly';
+     const extraDetails=err.errors[0].message;
+
+     const error={
+      status,
+      message,
+      extraDetails
+     }
+     console.log(error);
+     next(error);
+
       }
  };
 
