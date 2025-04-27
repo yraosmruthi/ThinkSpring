@@ -58,11 +58,15 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-      getServices();
-      Authentication();
-    
-  }, []); 
+      useEffect(() => {
+        getServices();
+      }, []);   // only once
+      
+      useEffect(() => {
+        if(token) {
+          Authentication();
+        }
+      }, [token]); 
 
    return (
     <AuthContext.Provider value={{ storeInLS, logoutUser, isLoggedIn, user,services}}>

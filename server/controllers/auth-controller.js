@@ -9,8 +9,6 @@ const register = async (req,res)=>{
    if(userExist) {
     return res.status(400).json({msg:"email exists"})
    }
-   
-    
    const createduser=await User.create({
     username,
     email,
@@ -22,13 +20,7 @@ const register = async (req,res)=>{
     userId:createduser._id.toString()
       });
   }catch(err){
-    const status = 500;
-    const message = 'internal server error';
-    const error={
-       status,
-       message
-    }
-     next(error);
+     next(err);
   }
 }
 

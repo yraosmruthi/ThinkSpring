@@ -4,6 +4,7 @@ const errorMiddleware = (err,req,res,next)=>{
      const extraDetails = err.extraDetails || 'error from server';
 
      return res.status(status).json({message,extraDetails});
+     
 }
 
 module.exports = errorMiddleware;

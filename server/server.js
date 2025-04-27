@@ -6,6 +6,7 @@ const connectDb = require('./utils/db');
 const authrouter = require('./routes/auth-route');
 const contactRoute = require('./routes/contact-route')
 const serviceRoute = require('./routes/service-route')
+const errorMiddleware = require('./middlewares/error-middleware')
 const cors = require('cors');
 
 
@@ -17,6 +18,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(errorMiddleware);
 app.use("/auth",authrouter);
 app.use("/form",contactRoute);
 app.use("/data",serviceRoute);

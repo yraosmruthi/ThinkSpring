@@ -2,13 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/AuthProvider';
 
-
-
-
-
 const URL = 'http://localhost:3000/auth/register'
   const Register = () => {
-  const navigate = useNavigate(); // ✅ Top-level usage
+  const navigate = useNavigate(); 
   const { storeInLS } = useAuth();
   const [user,setUser]=useState({
     username:"",
@@ -16,9 +12,8 @@ const URL = 'http://localhost:3000/auth/register'
     phone:"",
     password:""
   })
- 
+   
   const handleInput = (e)=>{
-    
     let name=e.target.name;
     let value=e.target.value;
 
@@ -28,8 +23,7 @@ const URL = 'http://localhost:3000/auth/register'
      })
     }
    
-
-   const handleSubmit =async (e)=>{
+  const handleSubmit =async (e)=>{
     e.preventDefault();
     try{
     const response = await fetch(URL,{
@@ -40,11 +34,11 @@ const URL = 'http://localhost:3000/auth/register'
      body:JSON.stringify(user)
 
     });
-    console.log("register",response);
+    
+    const res_data = await response.json(); 
+    console.log("register side",res_data)
 
     if(response.ok){
-      const res_data = await response.json();
-       console.log(res_data.token);
       storeInLS(res_data.token)
       alert('registration successful');
       setUser({
@@ -53,15 +47,17 @@ const URL = 'http://localhost:3000/auth/register'
         phone:"",
         password:""
       });
-      navigate("/")
+      navigate("/");
     } else{
-      alert("invalid credential");
-      console.log("invalid credential")
+      
+      alert(res_data?.extraDetails || res_data?.message || "Registration failed. Please check your input.");
+      
     }
   }catch(error){
     console.log(error);
+    alert("Network error or server not responding. Please try again later.");
   }
-    }
+ }
    
 
   return (

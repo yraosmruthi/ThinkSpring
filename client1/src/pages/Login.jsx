@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/AuthProvider';
+import {toast} from 'react-toastify'
 
 
 const URL = 'http://localhost:3000/auth/login';
@@ -40,9 +41,10 @@ const Login = () => {
     })
     console.log("login",response);
 
-    if(response.ok){
-      const res_data = await response.json();
+    const res_data = await response.json();
 
+    if(response.ok){
+      
       storeInLS(res_data.token)
       alert('login successful');
       setUser({
@@ -51,7 +53,7 @@ const Login = () => {
       });
       navigate("/")
     } else{
-      alert("invalid credential");
+      alert(res_data?.extraDetails || res_data?.message || "Registration failed. Please check your input.");
       console.log("invalid credential")
     }
   }catch(error){
@@ -59,7 +61,6 @@ const Login = () => {
   }
    }
 
-    
   return (
     <div>
        <div className='flex flex-row flex-1 p-[67px]'>
@@ -69,6 +70,7 @@ const Login = () => {
 
            <div className=' mt-20 ml-[150px]'>
             <h1 className='font-bold text-5xl bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 text-transparent bg-clip-text'><span className="bg-gradient-to-r from-[#3b3bca] via-purple-500 to-pink-500 bg-clip-text text-transparent">Login</span> Form</h1>
+
             <form autoComplete='off' action="" onSubmit={handleSubmit}>
                
                 <h2 className='mt-12 mb-2 text-l'>Email</h2>
