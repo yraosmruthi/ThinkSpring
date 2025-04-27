@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useAuth } from '../store/AuthProvider';
 import { toast } from 'react-toastify';
+
 
 const URL = 'http://localhost:3000/auth/user'
 
@@ -13,22 +14,25 @@ const Contact =  () => {
     message:""
    }
 
-   const[userData,setUserData] =useState(true)
+   
   
    const[contact,setContact]=useState(defaultContactForm);
-   
-   const {user} = useAuth();
+   const {user,isLoggedIn} = useAuth();
 
-  
-    if (userData && user) {
-      setContact({
-        username: user.username || "",
-        email: user.email || "",
-        message: ""
-      });
-      setUserData(false);
-    }
-    
+     useEffect(() => {
+        if (user && isLoggedIn) {
+          
+          setContact({
+            username: user.username || "",
+            email: user.email || "",
+            message: ""
+          });
+        } else {
+          
+          setContact(defaultContactForm);  
+        }
+      }, [user,isLoggedIn]);
+ 
    const handleInput =(e)=>{
    let name=e.target.name;
    let value=e.target.value;
@@ -64,7 +68,7 @@ const Contact =  () => {
     toast.error(data?.extraDetails || data?.message || "Message not sent.");
    }
   }catch(error){
-  console.log(error)
+    toast.error("Network error.Try again later")
  }
 }
 
