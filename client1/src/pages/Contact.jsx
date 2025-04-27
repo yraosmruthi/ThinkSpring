@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import { useAuth } from '../store/AuthProvider';
+import { toast } from 'react-toastify';
 
 const URL = 'http://localhost:3000/auth/user'
 
@@ -51,12 +52,16 @@ const Contact =  () => {
     },
     body:JSON.stringify(contact)
   })
+  
+  const data = await response.json()
 
   if(response.ok){
     setContact(defaultContactForm)
-    const data = await response.json()
     console.log(data)
-    alert('message recieved successfully')
+    toast.success('message recieved successfully')
+   }
+   else{
+    toast.error(data?.extraDetails || data?.message || "Message not sent.");
    }
   }catch(error){
   console.log(error)

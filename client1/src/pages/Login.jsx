@@ -46,14 +46,14 @@ const Login = () => {
     if(response.ok){
       
       storeInLS(res_data.token)
-      alert('login successful');
+      toast.success('login successful');
       setUser({
         email:"",
         password:""
       });
       navigate("/")
     } else{
-      alert(res_data?.extraDetails || res_data?.message || "Registration failed. Please check your input.");
+      toast.error(res_data?.extraDetails || res_data?.message || "Login failed. Please check your input.");
       console.log("invalid credential")
     }
   }catch(error){

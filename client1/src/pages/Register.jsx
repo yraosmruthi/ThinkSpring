@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/AuthProvider';
+import { toast } from 'react-toastify';
 
 const URL = 'http://localhost:3000/auth/register'
   const Register = () => {
@@ -36,11 +37,11 @@ const URL = 'http://localhost:3000/auth/register'
     });
     
     const res_data = await response.json(); 
-    console.log("register side",res_data)
+    
 
     if(response.ok){
       storeInLS(res_data.token)
-      alert('registration successful');
+      toast.success('registration successful');
       setUser({
         username:"",
         email:"",
@@ -49,13 +50,16 @@ const URL = 'http://localhost:3000/auth/register'
       });
       navigate("/");
     } else{
-      
-      alert(res_data?.extraDetails || res_data?.message || "Registration failed. Please check your input.");
+      if (res_data.msg === "email exists") {
+        toast.error('Email already exists');
+      }else{
+        toast.error(res_data?.extraDetails || res_data?.message || "Registration failed. Please check your input.");
+      }
       
     }
   }catch(error){
     console.log(error);
-    alert("Network error or server not responding. Please try again later.");
+    toast.error("Network error or server not responding. Please try again later.");
   }
  }
    
