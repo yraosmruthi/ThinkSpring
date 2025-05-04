@@ -16,6 +16,7 @@ const corsOptions = {
     credentials:true 
   }
 
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(errorMiddleware);
@@ -23,12 +24,11 @@ app.use("/auth",authrouter);
 app.use("/form",contactRoute);
 app.use("/data",serviceRoute);
 
-
 app.get("/",(req,res)=>{
     res.send('hello');
 })
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 connectDb().then(()=>{
     app.listen(PORT,()=>{
