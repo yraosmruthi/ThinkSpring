@@ -10,7 +10,6 @@
       extraDetails: extraDetail
     });
   }
-
 };
 
  module.exports = validate;
